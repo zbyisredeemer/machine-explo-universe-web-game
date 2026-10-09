@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+test-results/
+.env
+.env.local
+__pycache__/
+*.pyc
+.env.*
+!.env.example
+artifacts/
+*.zip
+release.json
+*.log
+coverage/

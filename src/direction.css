@@ -1,0 +1,234 @@
+#arrival-bars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#arrival-bars::before,
+#arrival-bars::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 9vh;
+  background: #080f13;
+  transform: scaleY(0);
+  transition: transform 0.65s;
+  transform-origin: top;
+}
+#arrival-bars::after {
+  bottom: 0;
+  transform-origin: bottom;
+}
+#arrival-bars.active {
+  opacity: 1;
+}
+#arrival-bars.active::before,
+#arrival-bars.active::after {
+  transform: scaleY(1);
+}
+.arrival-caption {
+  position: absolute;
+  left: 6vw;
+  right: 6vw;
+  bottom: 13vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-shadow: 0 2px 20px #000;
+}
+.arrival-caption small {
+  font: 10px monospace;
+  letter-spacing: 4px;
+  color: #aedacd;
+}
+.arrival-caption strong {
+  font-size: 40px;
+  letter-spacing: 8px;
+  font-weight: 400;
+}
+#skip-arrival {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  background: #132328aa;
+  border: 1px solid #c3ded644;
+  padding: 12px 18px;
+  color: #e0e7dc;
+  cursor: pointer;
+}
+.arrival-active .hud-top,
+.arrival-active .mission,
+.arrival-active .vitals,
+.arrival-active .modules,
+.arrival-active .quick-controls,
+.arrival-active .radar-wrap,
+.arrival-active .waypoint,
+.arrival-active .stage-progress,
+.arrival-active .scan-control,
+.arrival-active .reticle {
+  opacity: 0 !important;
+  transition: opacity 0.3s;
+}
+#attack-warning {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -8px);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px 13px;
+  align-items: center;
+  padding: 12px 22px;
+  background: linear-gradient(90deg, #2d181100, #341b13dd, #2d181100);
+  border-top: 1px solid #ffc08888;
+  opacity: 0;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+  text-align: center;
+  pointer-events: none;
+}
+#attack-warning.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+#attack-warning small {
+  font: 9px monospace;
+  letter-spacing: 2px;
+  color: #e6a875;
+}
+#attack-warning strong {
+  font-size: 19px;
+  letter-spacing: 3px;
+  color: #ffe0b4;
+}
+#attack-warning span {
+  grid-column: 1/-1;
+  font-size: 11px;
+  color: #e3c7b3;
+}
+.scan-control {
+  position: absolute;
+  right: 42px;
+  top: 330px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 11px;
+  color: #b0c5c3;
+}
+#scan-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(transparent 49%, #97ead506 50%);
+  background-size: 100% 5px;
+  box-shadow: inset 0 0 180px #8ff4ce44;
+  transition: opacity 0.5s;
+}
+#scan-overlay.active {
+  opacity: 1;
+}
+.signal-label {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  background: #0a2428d9;
+  border-left: 2px solid #a5f0db;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.signal-label b {
+  font-size: 12px;
+  font-weight: 400;
+}
+.signal-label small {
+  font: 9px monospace;
+  color: #90bdb7;
+}
+#side-objective {
+  position: absolute;
+  left: 42px;
+  top: 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 250px;
+  padding-left: 13px;
+  border-left: 1px solid #d9bc7770;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+#side-objective.active {
+  opacity: 1;
+}
+#side-objective small {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #cebc97;
+}
+#side-objective strong {
+  font-size: 14px;
+  font-weight: 400;
+  color: #e5dbc5;
+}
+#side-objective span {
+  font-size: 10px;
+  color: #a4b9b3;
+  line-height: 1.7;
+}
+.mission {
+  background: linear-gradient(90deg, #06151be8, #06151b00);
+  padding: 15px 45px 17px 16px;
+  margin-left: -16px;
+}
+.chapter-label {
+  text-shadow: 0 2px 15px #000;
+}
+.vignette {
+  background: radial-gradient(ellipse at 50% 45%, transparent 37%, #030c1655 100%) !important;
+}
+@media (max-height: 720px) {
+  #side-objective {
+    top: 240px;
+  }
+  .scan-control {
+    top: 285px;
+  }
+  #attack-warning {
+    top: 19%;
+  }
+  .arrival-caption strong {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1000px) {
+  #side-objective {
+    left: 24px;
+    max-width: 210px;
+  }
+  .scan-control {
+    right: 25px;
+  }
+  .arrival-caption strong {
+    font-size: 28px;
+  }
+  #attack-warning {
+    width: 350px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #arrival-bars,
+  .arrival-active * {
+    transition: none !important;
+  }
+}

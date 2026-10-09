@@ -1,0 +1,21 @@
+name: Bug report / 缺陷报告
+description: Report a reproducible problem
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 游戏版本、操作系统和浏览器版本
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤、预期和实际结果
+      description: 可从设置导出诊断信息；请勿上传私人存档或敏感数据。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图或诊断（可选）

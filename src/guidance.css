@@ -1,0 +1,285 @@
+.mission {
+  max-width: 355px;
+  padding-bottom: 12px !important;
+}
+#objective-detail {
+  display: block;
+  line-height: 1.7;
+  max-width: 300px;
+}
+#task-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 11px;
+  color: #e3eee0;
+}
+#task-action kbd {
+  background: #b8dec117;
+  color: #d3f3df;
+  font-size: 10px;
+}
+#task-progress {
+  margin-top: 9px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #b4c6bf;
+}
+#task-update {
+  position: absolute;
+  left: 15px;
+  top: calc(100% + 17px);
+  width: 280px;
+  padding: 9px 12px;
+  background: #102a30e8;
+  border-left: 2px solid #b7e6d1;
+  font-size: 11px;
+  color: #d4f0dc;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+#task-update.visible {
+  opacity: 1;
+}
+.stage-progress {
+  top: 94px !important;
+  left: 49px !important;
+}
+#side-objective {
+  top: 340px !important;
+}
+.waypoint small {
+  background: #071d25b8;
+  padding: 5px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  font-size: 10px;
+}
+.interaction.blocked {
+  border-color: #ddac7755;
+}
+.interaction.blocked kbd {
+  background: #e0b88f;
+  color: #2a211a;
+}
+#skill-card {
+  --skill-color: #a8e4d0;
+  position: absolute;
+  left: 50%;
+  bottom: 118px;
+  transform: translateX(-50%);
+  width: 288px;
+  padding: 12px 15px 10px;
+  background: linear-gradient(110deg, #0b202be8, #102b32de);
+  border: 1px solid #a9c7c32b;
+  border-left: 2px solid var(--skill-color);
+  pointer-events: none;
+}
+#skill-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#skill-card header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#skill-card header small {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #98b5ae;
+}
+#skill-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--skill-color);
+  letter-spacing: 1px;
+}
+#skill-card header kbd {
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+}
+#skill-description {
+  font-size: 10px;
+  line-height: 1.65;
+  color: #b2ccc1;
+  margin: 7px 0 8px;
+  min-height: 17px;
+}
+.skill-state {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  color: #bfd2c8;
+}
+.skill-state small {
+  font-size: 9px;
+  color: #8eafa4;
+}
+.skill-charge {
+  height: 2px;
+  background: #b3ddc822;
+  margin: 8px 0;
+}
+.skill-charge i {
+  display: block;
+  height: 100%;
+  background: var(--skill-color);
+  transform-origin: left;
+}
+#skill-card footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  color: #8eada6;
+}
+#skill-card.ready header kbd {
+  border-color: var(--skill-color);
+  background: #9ee0c71a;
+  color: #d3ffec;
+}
+#skill-card.blocked #skill-status {
+  color: #edbb93;
+}
+#skill-active:empty {
+  display: none;
+}
+#skill-active {
+  font-size: 10px;
+  color: #bddcff;
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid #abcfee24;
+}
+#ability-feedback {
+  position: absolute;
+  left: 50%;
+  bottom: 285px;
+  transform: translate(-50%, 5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 390px;
+  padding: 10px 18px;
+  background: #102934dd;
+  border-top: 1px solid #a0e2cc88;
+  text-align: center;
+  opacity: 0;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+  pointer-events: none;
+}
+#ability-feedback.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+#ability-feedback strong {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e0f7db;
+}
+#ability-feedback span {
+  font-size: 10px;
+  color: #b7d6c8;
+  line-height: 1.6;
+}
+#ability-feedback.blocked {
+  border-color: #e7b086;
+}
+#ability-feedback.blocked strong {
+  color: #f1c398;
+}
+.module-slot.cooling {
+  border-color: #90ad9b88;
+}
+.ability-ready,
+#module-meter {
+  display: none !important;
+}
+.interaction {
+  bottom: 310px !important;
+  max-width: 90vw;
+  white-space: normal;
+}
+@media (max-width: 1100px) {
+  #skill-card {
+    width: 245px;
+    left: 49%;
+  }
+  .mission {
+    max-width: 300px;
+  }
+  .quick-controls {
+    font-size: 8px;
+    right: 18px;
+  }
+  #ability-feedback {
+    max-width: 300px;
+  }
+  .waypoint small {
+    max-width: 230px;
+    white-space: normal;
+  }
+}
+@media (max-height: 740px) {
+  #skill-card {
+    bottom: 106px;
+    padding: 8px 12px;
+  }
+  #skill-card footer {
+    display: none;
+  }
+  #ability-feedback {
+    bottom: 247px;
+  }
+  .interaction {
+    bottom: 273px !important;
+  }
+  #side-objective {
+    top: 315px !important;
+  }
+}
+
+/* Keep the centre clear for the robot, hazards and aim point. */
+#skill-card {
+  left: 32px;
+  bottom: 182px;
+  transform: none;
+  width: 270px;
+}
+#ability-feedback {
+  left: 32px;
+  bottom: 344px;
+  transform: none;
+  width: 270px;
+  align-items: flex-start;
+  text-align: left;
+}
+#ability-feedback.visible {
+  transform: none;
+}
+@media (max-width: 1100px) {
+  #skill-card,
+  #ability-feedback {
+    left: 24px;
+    width: 245px;
+  }
+}
+@media (max-height: 740px) {
+  #skill-card {
+    bottom: 168px;
+  }
+  #ability-feedback {
+    bottom: 309px;
+  }
+  .skill-feedback #side-objective {
+    opacity: 0 !important;
+  }
+}
